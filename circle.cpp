@@ -2,9 +2,15 @@
 #include<cmath>
 using namespace std;
 class Circle {
-    public:
+    private:
     double radius;
     string color;
+    public:
+    Circle (double r, string c)  {
+        radius = r;
+        color = c;
+    }
+    
     double circumference() {
       return 2 * M_PI * radius;
     }
@@ -15,22 +21,24 @@ class Circle {
         return radius > 0;
     }
     void mau() {
-        cout << "Màu sắc của hình tròn: " << color << endl;
+        cout << "Mau sac cua hinh tron: " << color << endl;
     }
 };
 int main(){
-    Circle circle1;
-    cout <<"Nhập bán kính hình tròn: ";
-    cin >> circle1.radius;
-    cout <<"Nhập màu sắc hình tròn: ";
-    cin >> circle1.color;
+    double r;
+    cout <<"Nhap ban kinh hinh tron: ";
+    cin >> r;
+    string c;
+    cout <<"Nhap mau sac hinh tron: ";
+    cin >> c;
+    Circle circle1(r,c);
     if(!circle1.kiemtra()) {
-        cout << "không hợp lệ" << endl;
+        cout << "khong hop le" << endl;
         return 0;
     }
     else {
-    cout << "Chu vi hình tròn: " << circle1.circumference() << " đơn vị" << endl;
-    cout << "Diện tích hình tròn: " << circle1.area() << " đơn vị vuông" << endl;
+    cout << "Chu vi hinh tron: " << circle1.circumference() << " don vi" << endl;
+    cout << "Dien tich hinh tron: " << circle1.area() << " don vi vuong" << endl;
     }
     circle1.mau();
     return 0;

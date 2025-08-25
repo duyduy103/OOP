@@ -2,12 +2,19 @@
 using namespace std;
 
 class Course {
-public:
-    string courseName;
+    private :
+     string courseName;
     string courseCode;
     string instructorName;
     int credits;
-
+public:
+    Course ( string cn, string cc, string i, int cr) {
+        courseName = cn;
+        courseCode = cc;
+        instructorName = i;
+        credits = cr;
+    }
+    
     void displayInfo() {
         cout << "Instrctor Name: " << instructorName << endl;
         cout << "Course Name: " << courseName << endl;
@@ -24,11 +31,7 @@ public:
 };
 
 int main() {
-    Course course1;
-    course1.instructorName = "Le Khanh Duy";
-    course1.courseName = "Object Oriented Programming";
-    course1.courseCode = "CS202";
-    course1.credits = 4;
+    Course course1("Le Khanh Duy", "Object Oriented Programming", "CS202", 4);
 
     course1.displayInfo();
 

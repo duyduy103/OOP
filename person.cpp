@@ -2,11 +2,13 @@
 using namespace std;
 
 class Person {
-public:
+    private:
     string name;
     int age;
     string address;
     string phoneNumber;
+    public:
+    Person(string n, int ag, string ad, string p) : name(n), age(ag), address(ad), phoneNumber(p) {}
     void displayInfo() {
         cout << "Name: " << name << endl;
         cout << "Age: " << age << endl;
@@ -27,11 +29,8 @@ public:
 };
 
 int main() {
-    Person person1;
-    person1.name = "John Doe";
-    person1.age = 20;
-    person1.address = "123 Main St";
-    person1.phoneNumber = "0123456789" ;
+    Person person1 ("John Doe", 20, "123 Main St", "0123456789" );
+
     person1.displayInfo();
 
     if (person1.isAdult()) {

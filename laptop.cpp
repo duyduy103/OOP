@@ -1,12 +1,14 @@
 #include <iostream>
 using namespace std;
 class Laptop {
-    public:
+    private:
     string brand;
     string model;
     int ram; 
     int storage; 
     int gpu;
+    public:
+    Laptop ( string br, string m, int r, int s, int g) : brand(br), model(m), ram(r), storage(s), gpu(g) {}
     void displayInfo() {
         cout << "Brand: " << brand << endl;
         cout << "Model: " << model << endl;
@@ -34,12 +36,7 @@ class Laptop {
     }
 };
 int main() {
-    Laptop laptop1;
-    laptop1.brand = "Dell";
-    laptop1.model = "XPS 13";
-    laptop1.ram = 8;
-    laptop1.gpu = 21;
-    laptop1.storage = 256;
+    Laptop laptop1("Dell", "XPS 13", 8, 21 , 256);
     laptop1.displayInfo();
     laptop1.checkRAM(16);
     laptop1.checkGPU(20);

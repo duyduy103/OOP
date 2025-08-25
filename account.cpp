@@ -2,10 +2,12 @@
 #include<cmath>
 using namespace std;
 class Account {
-    public:
+    private:
     string accountNumber;
     double balance;
     string ownerName;
+    public:
+    Account (string ac, double ba, string ow) : accountNumber(ac), balance(ba), ownerName(ow) {}
     void deposit(double amount) {
        balance += amount;
        cout << "Deposit: " << amount << endl;
@@ -35,10 +37,7 @@ class Account {
     
 };
 int main(){
-    Account acc1;
-    acc1.accountNumber = "123456789";
-    acc1.ownerName = "Le Khanh Duy";
-    acc1.balance = 1000.0;
+    Account acc1("123456789", 1000.0, "Le Khanh Duy" );
     acc1.displayBalance();
     acc1.deposit(500);
     acc1.displayBalance();
